@@ -239,8 +239,3 @@ export function weakMemo<T extends object, R>(f: (obj: T) => R): (obj: T) => R {
         return val
     }
 }
-
-
-export function isTsNode(): boolean {
-    return !!(process as any)[Symbol.for('ts-node.register.instance')]
-}

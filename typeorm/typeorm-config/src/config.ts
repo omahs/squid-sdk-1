@@ -1,9 +1,13 @@
-import {isTsNode} from '@subsquid/util-internal'
+import {createLogger} from '@subsquid/logger'
+import {isTsNode} from '@subsquid/util-internal-ts-node'
 import * as path from 'path'
 import * as process from 'process'
 import type {DataSourceOptions as OrmConfig} from 'typeorm'
 import {createConnectionOptions} from './connectionOptions'
 import {SnakeNamingStrategy} from './namingStrategy'
+
+
+const log = createLogger('sqd:typeorm-config')
 
 
 export interface OrmOptions {
@@ -18,11 +22,15 @@ export function createOrmConfig(options?: OrmOptions): OrmConfig {
     let dir = path.resolve(options?.projectDir || process.cwd())
     let model = resolveModel(dir)
     let migrationsDir = path.join(dir, MIGRATIONS_DIR)
+    let locations = {
+        entities: [model],
+        migrations: [migrationsDir + '/*.js']
+    }
+    log.debug(locations, 'typeorm locations')
     return  {
         type: 'postgres',
         namingStrategy: new SnakeNamingStrategy(),
-        entities: [model],
-        migrations: [migrationsDir + '/*.js'],
+        ...locations,
         ...createConnectionOptions()
     }
 }

@@ -64,7 +64,7 @@ dependencies:
     version: file:projects/gql-test-client.tgz(graphql@15.8.0)
   '@rush-temp/graphql-server':
     specifier: file:./projects/graphql-server.tgz
-    version: file:projects/graphql-server.tgz(supports-color@8.1.1)(ts-node@10.9.2)
+    version: file:projects/graphql-server.tgz(supports-color@8.1.1)
   '@rush-temp/http-client':
     specifier: file:./projects/http-client.tgz
     version: file:projects/http-client.tgz
@@ -194,6 +194,9 @@ dependencies:
   '@rush-temp/util-internal-read-lines':
     specifier: file:./projects/util-internal-read-lines.tgz
     version: file:projects/util-internal-read-lines.tgz
+  '@rush-temp/util-internal-ts-node':
+    specifier: file:./projects/util-internal-ts-node.tgz
+    version: file:projects/util-internal-ts-node.tgz
   '@rush-temp/util-internal-validation':
     specifier: file:./projects/util-internal-validation.tgz
     version: file:projects/util-internal-validation.tgz
@@ -5176,7 +5179,7 @@ packages:
     dev: false
 
   file:projects/astar-erc20.tgz(supports-color@8.1.1)(ts-node@10.9.2):
-    resolution: {integrity: sha512-0xtyUgzgr/B8ar88IpGaS51S6MxhosQpIcCvienB1cHz2edHETnzN5jyzZOZJjcN+5EUDJmt2rYiBr1eIKVi6Q==, tarball: file:projects/astar-erc20.tgz}
+    resolution: {integrity: sha512-W5esye2lfyB6GE3kbKihad9Ys9YybeXqFOfA5P/ohZ5ESS5VoQ9oH6oi4D+gwnRkTG8Jkp7FwkdzcifBx8PwgQ==, tarball: file:projects/astar-erc20.tgz}
     id: file:projects/astar-erc20.tgz
     name: '@rush-temp/astar-erc20'
     version: 0.0.0
@@ -5210,7 +5213,7 @@ packages:
     dev: false
 
   file:projects/balances.tgz(supports-color@8.1.1):
-    resolution: {integrity: sha512-JSD0UNRg5SPcRfvM0RIi42kG/c0FGC+0qUOCj2Fcvrlt3iabKDtmVx9reTB3/qToFt0PV6Bwo5rKNGe8kpwJng==, tarball: file:projects/balances.tgz}
+    resolution: {integrity: sha512-i4c+ZWLUg3wzyjdQsDMFOA7nvjLGVptXcpo41UrvoCNoy3qfoLBV+lIkxbFtNhB7hV0+AQukwAQtEJWYTAJsYw==, tarball: file:projects/balances.tgz}
     id: file:projects/balances.tgz
     name: '@rush-temp/balances'
     version: 0.0.0
@@ -5289,7 +5292,7 @@ packages:
     dev: false
 
   file:projects/erc20-transfers.tgz(supports-color@8.1.1)(ts-node@10.9.2):
-    resolution: {integrity: sha512-xJGrLjN1UYPmwOSt+WjXABLTgOvPbAOvuc1lWMuzUjKNRR62ppAP42bjBTZW8BEAX2rs/yHuDbbOHnIL9gHMHg==, tarball: file:projects/erc20-transfers.tgz}
+    resolution: {integrity: sha512-1SjkvLzUDK3bJTMbxQ9AsR7K9WiH4Ug9dcXJDl+8f3wELyFciWPhGVbhJZ4BOXd33Uduabypqgq9UsPwDD3z2g==, tarball: file:projects/erc20-transfers.tgz}
     id: file:projects/erc20-transfers.tgz
     name: '@rush-temp/erc20-transfers'
     version: 0.0.0
@@ -5378,8 +5381,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  file:projects/graphql-server.tgz(supports-color@8.1.1)(ts-node@10.9.2):
-    resolution: {integrity: sha512-yzKe3NMwkHCFfgcCg7+x0bLl70cEEUc+pD345Z7wenxWukvXXIfJThTYP2+mCh05nPgM7m1W9ICLAL7wQCFzcQ==, tarball: file:projects/graphql-server.tgz}
+  file:projects/graphql-server.tgz(supports-color@8.1.1):
+    resolution: {integrity: sha512-/TmyQkt9weenmj0oisnKVoo1YEFp9xpQ8KtnTORwXl+Joqnkeu3im/YyE/VC6W4RQTgZnm1e4N6qlPPUmVrCww==, tarball: file:projects/graphql-server.tgz}
     id: file:projects/graphql-server.tgz
     name: '@rush-temp/graphql-server'
     version: 0.0.0
@@ -5408,6 +5411,7 @@ packages:
       keyv: 4.5.4
       mocha: 10.2.0
       pg: 8.11.3
+      ts-node: 10.9.2(@types/node@18.18.14)(typescript@5.3.2)
       type-graphql: 1.2.0-rc.1(class-validator@0.14.0)(graphql@15.8.0)
       typeorm: 0.3.17(pg@8.11.3)(supports-color@8.1.1)(ts-node@10.9.2)
       typescript: 5.3.2
@@ -5415,6 +5419,8 @@ packages:
     transitivePeerDependencies:
       - '@google-cloud/spanner'
       - '@sap/hana-client'
+      - '@swc/core'
+      - '@swc/wasm'
       - better-sqlite3
       - bufferutil
       - encoding
@@ -5430,7 +5436,6 @@ packages:
       - sql.js
       - sqlite3
       - supports-color
-      - ts-node
       - typeorm-aurora-data-api-driver
       - utf-8-validate
     dev: false
@@ -5557,7 +5562,7 @@ packages:
     dev: false
 
   file:projects/shibuya-psp22.tgz(supports-color@8.1.1)(ts-node@10.9.2):
-    resolution: {integrity: sha512-bnK/1Tb+Vcq+gbUIe7xVwRDlY/PFAHteJ1FMQvq7M7NsAoe6ZlsPHGPZq8yMRfsVZu1ZeeAlZqpno7mtA5CEFQ==, tarball: file:projects/shibuya-psp22.tgz}
+    resolution: {integrity: sha512-LJI+s7xxu2M7X8g4MlcPDODSh7t2nvxjW55TpE0uOwWMOsrYPbZErrw8fO73ObIMo8CFunREVjtIuu672Ab6Sw==, tarball: file:projects/shibuya-psp22.tgz}
     id: file:projects/shibuya-psp22.tgz
     name: '@rush-temp/shibuya-psp22'
     version: 0.0.0
@@ -5712,7 +5717,7 @@ packages:
     dev: false
 
   file:projects/typeorm-config.tgz(pg@8.11.3)(supports-color@8.1.1)(ts-node@10.9.2):
-    resolution: {integrity: sha512-i17qxfY1keplFQ/q3MLjDG4iIzgQOmT60/b7s+3sSdChhun5wFtSOPIU2tlCLHBEubI+Zt8zFm7yANy3BcLTgA==, tarball: file:projects/typeorm-config.tgz}
+    resolution: {integrity: sha512-/43ylzenKAbxkL5EtcmZiJRoZYH0Grk5hLm9zV5x21CrmC3NQ3jS9AkOzYyOxnNw1XhsEdBoWJZoww0aJFkwXA==, tarball: file:projects/typeorm-config.tgz}
     id: file:projects/typeorm-config.tgz
     name: '@rush-temp/typeorm-config'
     version: 0.0.0
@@ -5742,7 +5747,7 @@ packages:
     dev: false
 
   file:projects/typeorm-migration.tgz(pg@8.11.3)(supports-color@8.1.1)(ts-node@10.9.2):
-    resolution: {integrity: sha512-44nKFo8PSZ6okjEwtuoofP2RMOvRfG+Nt/zwtyUhvUx6S5zen0zfQKL5kKCCgSH4QzZ2vkxz1IzUvP+tOMmN8g==, tarball: file:projects/typeorm-migration.tgz}
+    resolution: {integrity: sha512-0D24N+N8RhjnfnNN2G/uBGbXurYY5329RTATUKtg/GE0GqypTAOWrZL5vM3/Dcq1qzuFxdGLuSSKf293maIPEg==, tarball: file:projects/typeorm-migration.tgz}
     id: file:projects/typeorm-migration.tgz
     name: '@rush-temp/typeorm-migration'
     version: 0.0.0
@@ -5774,7 +5779,7 @@ packages:
     dev: false
 
   file:projects/typeorm-store.tgz(supports-color@8.1.1)(ts-node@10.9.2):
-    resolution: {integrity: sha512-Y/mBNIPCA78yhlyo49NqrTyvTwXKpzh7zNiRiXA1J4aK8U9S36OsNwzCVLw5rjnc8vJOL7pbcb/6EPaH41PCxQ==, tarball: file:projects/typeorm-store.tgz}
+    resolution: {integrity: sha512-4sokEUL9nYe3qPqrKurErV1vttQznR9He0NhDlM1aYazcaFxg9AgaeHQ5+dxihIjlDAL5cO+M3T0G9XWLIK3tQ==, tarball: file:projects/typeorm-store.tgz}
     id: file:projects/typeorm-store.tgz
     name: '@rush-temp/typeorm-store'
     version: 0.0.0
@@ -5963,6 +5968,15 @@ packages:
   file:projects/util-internal-read-lines.tgz:
     resolution: {integrity: sha512-piBAEJbqWfm/Pk/a16qkO9/hbQ5XWfFeB19YLsVPkCjHrXdaQkcO09IsALspo2Kw+whRRHi3z3b0hIu5r366qw==, tarball: file:projects/util-internal-read-lines.tgz}
     name: '@rush-temp/util-internal-read-lines'
+    version: 0.0.0
+    dependencies:
+      '@types/node': 18.18.14
+      typescript: 5.3.2
+    dev: false
+
+  file:projects/util-internal-ts-node.tgz:
+    resolution: {integrity: sha512-cwEqqcs87eNWTRv1zZK+B1ZRQaRE0nDF6WY6/Oxu061fQ5ZO+ZWxZo8PB7iwljWqT0kTOd4Ti2HIIJQwKoeA8g==, tarball: file:projects/util-internal-ts-node.tgz}
+    name: '@rush-temp/util-internal-ts-node'
     version: 0.0.0
     dependencies:
       '@types/node': 18.18.14
